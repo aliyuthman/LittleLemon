@@ -9,6 +9,8 @@ djangorestframework = "*"
 mysqlclient = "*"
 python-dotenv = "*"
 mysql-connector-python = "*"
+djoser = "*"
+djangorestframework-xml = "*"
 
 [dev-packages]
 

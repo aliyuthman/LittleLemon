@@ -37,8 +37,10 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "rest_framework.authtoken",
     "restaurant",
-    'rest_framework',
+    "djoser",
+    "rest_framework",
 ]
 
 MIDDLEWARE = [
@@ -134,3 +136,33 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+REST_FRAMEWORK = {
+    "DEFAULT_RENDERER_CLASSES": [
+        "rest_framework.renderers.JSONRenderer",
+        # "rest_framework_xml.renderers.XMLRenderer",
+        "rest_framework.renderers.BrowsableAPIRenderer",
+    ],
+    "DEFAULT_AUTHENTICATION_CLASSES": [
+        "rest_framework.authentication.TokenAuthentication",
+        "rest_framework.authentication.SessionAuthentication",
+    ],
+}
+
+
+# # Authentication
+# AUTHENTICATION_BACKENDS = [
+#     "djoser.backends.AuthenticationBackend",
+# ]
+
+# Djoser settings
+DJOSER = {
+    # Customize the URLs as per your requirement
+    "LOGIN_URL": "auth/login/",
+    "LOGOUT_URL": "auth/logout/",
+    "PASSWORD_RESET_CONFIRM_URL": "auth/reset-password/confirm/",
+    "TOKEN_MODEL": None,
+    "PASSWORD_RESET_SHOW_EMAIL_NOT_FOUND": True,
+    "SET_PASSWORD_RETYPE": False,
+    # Other settings as needed
+}

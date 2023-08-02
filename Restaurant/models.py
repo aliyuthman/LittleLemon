@@ -14,6 +14,9 @@ class Menu(models.Model):
     def __str__(self):
         """Unicode representation of Menu."""
         pass
+    
+    def get_item(self):
+        return f'{self.title} : {str(self.price)}'
 
 
 class Booking(models.Model):
