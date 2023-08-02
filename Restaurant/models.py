@@ -13,18 +13,20 @@ class Menu(models.Model):
 
     def __str__(self):
         """Unicode representation of Menu."""
-        pass
-    
+        return self.title
+
     def get_item(self):
-        return f'{self.title} : {str(self.price)}'
+        return f"{self.title} : {str(self.price)}"
 
 
 class Booking(models.Model):
     """Model definition for Booking."""
+
     # id = models.IntegerField(primary_key=True, max_length=11)
     name = models.CharField(max_length=255)
     no_of_guests = models.IntegerField(max_length=6)
     booking_date = models.DateField(auto_now=False, auto_now_add=False)
+
     def __str__(self):
         """Unicode representation of Booking."""
-        pass
+        return self.title
