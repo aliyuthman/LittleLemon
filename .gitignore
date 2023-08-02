@@ -1,2 +1,5 @@
 Pipfile
 Pipfile.lock
+.env
+.Config.cnf
+LittleLemon/settings.py
