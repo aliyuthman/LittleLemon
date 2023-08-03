@@ -29,4 +29,4 @@ class Booking(models.Model):
 
     def __str__(self):
         """Unicode representation of Booking."""
-        return self.title
+        return self.name

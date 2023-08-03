@@ -37,10 +37,10 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    "rest_framework.authtoken",
     "restaurant",
-    "djoser",
     "rest_framework",
+    "rest_framework.authtoken",
+    "djoser",
 ]
 
 MIDDLEWARE = [
@@ -147,6 +147,11 @@ REST_FRAMEWORK = {
         "rest_framework.authentication.TokenAuthentication",
         "rest_framework.authentication.SessionAuthentication",
     ],
+    "DEFAULT_THROTTLE_RATES": {
+        "anon": "2/minute",
+        "user": "5/minute",
+        "ten": "10/minute",
+    },
 }
 
 
@@ -157,12 +162,5 @@ REST_FRAMEWORK = {
 
 # Djoser settings
 DJOSER = {
-    # Customize the URLs as per your requirement
-    "LOGIN_URL": "auth/login/",
-    "LOGOUT_URL": "auth/logout/",
-    "PASSWORD_RESET_CONFIRM_URL": "auth/reset-password/confirm/",
-    "TOKEN_MODEL": None,
-    "PASSWORD_RESET_SHOW_EMAIL_NOT_FOUND": True,
-    "SET_PASSWORD_RETYPE": False,
-    # Other settings as needed
+    "USER_ID_FIELD": "username",
 }

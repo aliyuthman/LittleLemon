@@ -81,3 +81,6 @@ class BookingViewSet(viewsets.ModelViewSet):
     permission_classes = [IsAuthenticated]
     bookings = Booking.objects.all()
     serializer = BookingSerializer(bookings, many=True)
+
+    def list(self, request):
+        return Response(serializer, status.HTTP_200_OK)
