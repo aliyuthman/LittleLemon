@@ -33,6 +33,8 @@ Visit (user login authentication): http://127.0.0.1:8000/auth/token/login
 
 Check Test Folder inside LittleLemon/tests
 
+Run on terminal: python manage.py test 'LittleLemon/tests'
+
 7. Can the API be tested with the Insomnia REST client?
 Test user can be use:
 For token: 8770ce3887c5d9755aeb37520854cc1088154e57
