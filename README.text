@@ -1,3 +1,10 @@
+Superuser login:
+
+username: sprinary
+passward: sman@123!
+
+
+
 1. Does the web application use Django to serve static HTML content?
 
 Visit: http://127.0.0.1:8000/api/static/
